@@ -164,3 +164,38 @@ $(document).ready(function() {
         $('.video-background').css('background-size', 'cover');
     }
 });
+
+// Video Background Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const video = document.getElementById('weddingVideo');
+    const videoContainer = document.querySelector('.video-container');
+    const playBtn = document.querySelector('.mobile-play-btn');
+    
+    // Check if video can autoplay
+    video.play().then(() => {
+        // Autoplay worked
+        videoContainer.classList.remove('video-paused');
+    }).catch(error => {
+        // Autoplay blocked
+        videoContainer.classList.add('video-paused');
+    });
+    
+    // Mobile play button click handler
+    if (playBtn) {
+        playBtn.addEventListener('click', function() {
+            video.play();
+            videoContainer.classList.remove('video-paused');
+        });
+    }
+    
+    // Handle visibility changes (for mobile)
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            video.pause();
+        } else {
+            video.play().catch(() => {
+                videoContainer.classList.add('video-paused');
+            });
+        }
+    });
+});

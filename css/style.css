@@ -9859,7 +9859,6 @@ a.text-dark:hover, a.text-dark:focus {
     text-align: center;
 }
 
-/* Mobile-specific optimizations */
 @media (max-width: 768px) {
     .video-background {
         height: 80vh; /* Slightly smaller on mobile */
@@ -9873,7 +9872,71 @@ a.text-dark:hover, a.text-dark:focus {
         font-size: 1.2rem !important;
     }
 }
+/* Video Container */
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh; /* Mobile-friendly height */
+    overflow: hidden;
+}
 
+/* Video Element */
+.video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+}
+
+/* Mobile Play Button */
+.mobile-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background: rgba(220, 53, 69, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 25px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+}
+
+.mobile-play-btn i {
+    margin-right: 8px;
+}
+
+/* Show play button only when video is paused on mobile */
+.video-container.video-paused .mobile-play-btn {
+    display: block;
+}
+
+/* Overlay */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* Content */
+.video-content {
+    position: relative;
+    z-index: 2;
+}
 /* Mobile Responsiveness */
 @media (max-width: 991px) {
     /* Navbar adjustments */
