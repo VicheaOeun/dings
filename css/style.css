@@ -9770,26 +9770,51 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .countdown-number {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #dc3545;
     line-height: 1;
     margin-bottom: 5px;
 }
 
 .countdown-label {
-    font-size: 1rem;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #dc3545;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+}
+
+.section-title h3.text-danger {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-top: -10px;
+    margin-bottom: 20px !important;
+}
+
+.fa-heart.text-danger {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(0.95); }
 }
 
 @media (max-width: 768px) {
     .countdown-number {
-        font-size: 2rem;
+        font-size: 2.5rem;
+    }
+    .countdown-label {
+        font-size: 1rem;
+    }
+    .section-title h3 {
+        font-size: 1.4rem;
     }
     .countdown-item {
-        margin: 0 8px;
+        margin: 0 10px;
     }
 }
 
