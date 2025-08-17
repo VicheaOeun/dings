@@ -9859,14 +9859,18 @@ a.text-dark:hover, a.text-dark:focus {
     text-align: center;
 }
 
-/* Fallback for mobile devices that don't support autoplay */
+/* Mobile-specific optimizations */
 @media (max-width: 768px) {
-    .video-background video {
-        display: none;
-    }
     .video-background {
-        background: url('img/carousel-1.jpg') no-repeat center center;
-        background-size: cover;
+        height: 80vh; /* Slightly smaller on mobile */
+    }
+    
+    .display-1 {
+        font-size: 3rem !important; /* Smaller text on mobile */
+    }
+    
+    .video-content h3 {
+        font-size: 1.2rem !important;
     }
 }
 

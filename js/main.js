@@ -118,7 +118,7 @@
 // Countdown Timer
 function updateCountdown() {
     // Set the wedding date (YYYY, MM-1, DD)
-    const weddingDate = new Date(2025, 11, 13); // January 1, 2050 (adjust this to your wedding date)
+    const weddingDate = new Date(2025, 11, 3); // January 1, 2050 (adjust this to your wedding date)
     const now = new Date();
     const diff = weddingDate - now;
 
