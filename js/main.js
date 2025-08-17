@@ -115,3 +115,52 @@
     
 })(jQuery);
 
+// Countdown Timer
+function updateCountdown() {
+    // Set the wedding date (YYYY, MM-1, DD)
+    const weddingDate = new Date(2025, 11, 13); // January 1, 2050 (adjust this to your wedding date)
+    const now = new Date();
+    const diff = weddingDate - now;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('days').textContent = days.toString().padStart(2, '0');
+    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+}
+
+// Update countdown every second
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// Mobile menu improvements
+$(document).ready(function() {
+    // Close mobile menu when clicking a link
+    $('.navbar-nav>li>a').on('click', function(){
+        $('.navbar-collapse').collapse('hide');
+    });
+    
+    // Smooth scrolling for anchor links
+    $('a[href*="#"]').on('click', function(e) {
+        e.preventDefault();
+        
+        $('html, body').animate(
+            {
+                scrollTop: $($(this).attr('href')).offset().top - 70,
+            },
+            500,
+            'linear'
+        );
+    });
+    
+    // Video background fallback for mobile
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        $('video').remove();
+        $('.video-background').css('background', 'url(img/carousel-1.jpg) no-repeat center center');
+        $('.video-background').css('background-size', 'cover');
+    }
+});

@@ -9762,3 +9762,189 @@ a.text-dark:hover, a.text-dark:focus {
     border-right: none !important;
   }
 }
+
+/* Countdown Styles */
+.countdown-item {
+    margin: 0 15px;
+    text-align: center;
+}
+
+.countdown-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.countdown-label {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .countdown-number {
+        font-size: 2rem;
+    }
+    .countdown-item {
+        margin: 0 8px;
+    }
+}
+
+/* Video Background Styles */
+.video-background {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    min-height: 400px;
+    overflow: hidden;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.video-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Fallback for mobile devices that don't support autoplay */
+@media (max-width: 768px) {
+    .video-background video {
+        display: none;
+    }
+    .video-background {
+        background: url('img/carousel-1.jpg') no-repeat center center;
+        background-size: cover;
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 991px) {
+    /* Navbar adjustments */
+    .navbar-collapse {
+        background: rgba(0, 0, 0, 0.9);
+        padding: 15px;
+    }
+    
+    .navbar-brand.d-none.d-lg-block {
+        display: none !important;
+    }
+    
+    /* About section stacking */
+    .about .row > div {
+        min-height: 300px !important;
+    }
+    
+    /* Story timeline adjustments */
+    .timeline .row {
+        margin-bottom: 30px;
+    }
+    
+    .timeline img {
+        margin-bottom: 15px;
+    }
+    
+    /* Countdown adjustments */
+    #countdown {
+        flex-wrap: wrap;
+    }
+    
+    .countdown-item {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+    
+    /* Event section stacking */
+    #event .border-right {
+        border-right: none !important;
+        border-bottom: 1px solid #dee2e6;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+    
+    /* Gallery carousel */
+    .gallery-carousel .owl-item {
+        padding: 0 15px;
+    }
+    
+    /* RSVP form adjustments */
+    #rsvp .form-group {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    /* Font size adjustments */
+    .display-1 {
+        font-size: 3.5rem;
+    }
+    
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    /* Navbar logo */
+    .navbar-brand h1 {
+        font-size: 1.5rem;
+    }
+    
+    /* Section padding */
+    .container-fluid.py-5 {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+    
+    /* Story section */
+    .story-item {
+        margin-bottom: 30px;
+    }
+    
+    /* Family section filter buttons */
+    #portfolio-flters li {
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 575px) {
+    /* Very small devices */
+    .display-1 {
+        font-size: 2.5rem;
+    }
+    
+    .btn-play {
+        width: 60px;
+        height: 60px;
+    }
+    
+    /* Countdown single column */
+    .countdown-item {
+        width: 100%;
+    }
+}
